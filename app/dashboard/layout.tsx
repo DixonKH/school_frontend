@@ -13,8 +13,8 @@ export default function DashboardLayout({
       <div className={cn("bg-primary transition-all duration-300 ease-in-out", sidebarCollapsed ? "w-64" : "w-19")}>
         <SideBar toggleSidebar={toggleSidebar} sidebarCollapsed={sidebarCollapsed} />
       </div>
-      <div className="w-10/12 h-screen flex flex-col justify-start">
-        <div className="h-16">
+      <div className="w-full h-screen flex flex-col justify-start">
+        <div className="h-18 border-b border-gray-200 flex items-center px-6">
           <TopBar />
         </div>
         <main>{children}</main>

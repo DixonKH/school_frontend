@@ -57,7 +57,11 @@ export default function SideBar(props: any) {
               key={item.name}
               href={item.href}
               aria-current="page"
-              className={`menu-item ${isActive ? "text-secondary bg-border" : ""}`}
+              className={cn(
+                "menu-item",
+                isActive && "text-secondary bg-border",
+                !sidebarCollapsed && "justify-center",
+              )}
             >
               <item.icon
                 size={20}

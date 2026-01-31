@@ -3,42 +3,42 @@
 
 @theme inline {
   /* Core colors */
-  --color-primary: #0f162e;
-  --color-primary-foreground: #adb2bb;
+  --color-primary: #0f162e;    /*sidebar color*/
+  --color-primary-foreground: #adb2bb;   /*gray-600*/
 
-  --color-secondary: #1a68ea;
-  --color-secondary-foreground: #ffffff;
+  --color-secondary: #1a68ea;  /* dodgerBlue */
+  --color-secondary-foreground: #ffffff; /* white */
 
-  --color-accent: #f5a418;
-  --color-muted: #1ab050;
+  --color-accent: #f5a418; /* yellow */
+  --color-muted: #1ab050;  /* green */
 
-  --color-destructive: #dc2626;
-  --color-border: #26344a;
-  --color-ring: #0d9488;
+  --color-destructive: #dc2626;  /* red */
+  --color-border: #26344a;    /* sidebar color 2 */
+  --color-ring: #0d9488;   /* teal-600 */
 
   /* Background & text */
-  --color-background: #ffffff;
-  --color-foreground: #0f172a;
-  --color-foreground-bg: #bfbfbf
+  --color-background: #ffffff;  
+  --color-foreground: #1f3059;  /* dark blue */
+  --color-foreground-bg: #bfbfbf /* gray-400 */
 }
 
 :root {
-  --primary: #0d9488;
-  --primary-foreground: #ffffff;
+  --primary: #0d9488;            /* teal-600 */
+  --primary-foreground: #ffffff; 
 
-  --secondary: #14b8a6;
+  --secondary: #1a68ea;          /* dodgerBlue */
   --secondary-foreground: #ffffff;
 
   --background: #ffffff;
-  --foreground: #0f172a; 
+  --foreground: #0f172a;         /* sidebar color 2 */
 
-  --accent: #2dd4bf;
-  --accent-foreground: #065f46;
+  --accent: #2dd4bf;             /* teal-400 */
+  --accent-foreground: #065f46;  /* teal-900 */
 
-  --destructive: #dc2626;
+  --destructive: #dc2626;        /* red */
 
   --muted: #f0fdfa;
-  --muted-foreground: #0f766e;
+  --muted-foreground: #0f766e;   /* teal-800 */
 
   --card: #ffffff;
   --card-foreground: #0f766e;
@@ -46,15 +46,15 @@
   --popover: #f0fdfa;
   --popover-foreground: #0f766e;
 
-  --input: #e0f2f1;
-  --border: #14b8a6;
-  --ring: #0d9488;
+  --input: #e0f2f1;             /* teal-200 */
+  --border: #1a68ea;           /* dodgerBlue */
+  --ring: #0d9488;              /* teal-600 */
 
   --sidebar: #e0f2f1;
-  --sidebar-foreground: #065f46;
+  --sidebar-foreground: #065f46;      /* teal-900 */
   --sidebar-primary: #0d9488;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #2dd4bf;
+  --sidebar-accent: #2dd4bf;             /* teal-400 */
   --sidebar-accent-foreground: #065f46;
 }
 
@@ -67,10 +67,8 @@
   }
   input,
   textarea,
-  select,
-  button {
-    border-color: var(--border);
-    outline-color: var(--ring);
+  select {
+     @apply outline-none focus:ring-1 ;
   }
   h1 {
     @apply text-2xl font-semibold;
@@ -92,5 +90,8 @@
   }
   .menu-item:hover {
     @apply text-white bg-border;
+  }
+  .badge {
+    @apply absolute -top-2.5 -right-2 min-w-4.5 h-4.5 p-1 px-1.5 rounded-full bg-accent text-white text-[11px] font-medium flex items-center justify-center leading-none
   }
 }
