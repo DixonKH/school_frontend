@@ -13,87 +13,82 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-const menu = [
-  { name: "Dashboard", icon: MdSpaceDashboard, href: "/dashboard" },
-  { name: "Students", icon: FaUser, href: "/dashboard/students" },
-  { name: "Teachers", icon: FaUserGraduate, href: "/dashboard/teachers" },
-  { name: "Classes", icon: FaChalkboardTeacher, href: "/dashboard/classes" },
-  { name: "Payments", icon: IoWallet, href: "/dashboard/payments" },
-  {
-    name: "Notifications",
-    icon: IoNotifications,
-    href: "/dashboard/notifications",
-  },
-  { name: "Settings", icon: IoIosSettings, href: "/dashboard/settings" },
-];
+const menuByRole = {
+  ADMIN: [
+    { name: "Dashboard", icon: MdSpaceDashboard, href: "/admin" },
+    { name: "Students", icon: FaUser, href: "/admin/students" },
+    { name: "Teachers", icon: FaUserGraduate, href: "/admin/teachers" },
+    { name: "Classes", icon: FaChalkboardTeacher, href: "/admin/classes" },
+    { name: "Payments", icon: IoWallet, href: "/admin/payments" },
+    { name: "Settings", icon: IoIosSettings, href: "/admin/settings" },
+  ],
 
-export default function SideBar(props: any) {
-  const { toggleSidebar, sidebarCollapsed } = props;
+  TEACHER: [
+    { name: "Dashboard", icon: MdSpaceDashboard, href: "/teacher" },
+    { name: "My Classes", icon: FaChalkboardTeacher, href: "/teacher/classes" },
+    { name: "Schedule", icon: IoNotifications, href: "/teacher/schedule" },
+  ],
+
+  STUDENT: [
+    { name: "Dashboard", icon: MdSpaceDashboard, href: "/student" },
+    { name: "My Grades", icon: FaUserGraduate, href: "/student/grades" },
+    { name: "Attendance", icon: IoNotifications, href: "/student/attendance" },
+  ],
+};
+
+export default function SideBar({
+  role,
+  toggleSidebar,
+  sidebarCollapsed,
+}: {
+  role: "ADMIN" | "TEACHER" | "STUDENT";
+  toggleSidebar: () => void;
+  sidebarCollapsed: boolean;
+}) {
   const pathname = usePathname();
+  const menu = menuByRole[role];
+
   return (
-    <div className="w-full flex flex-col items-center justify-start px-2 pt-4">
-      <div className="mb-5 pl-3 w-full flex flex-row gap-2 items-center text-white">
-        <span>
-          <GiBookmarklet size={32} />
-        </span>
-        <p
-          className={cn(
-            "flex flex-col transition-all duration-200 overflow-hidden",
-            sidebarCollapsed ? "opacity-100 max-h-20" : "opacity-0 max-h-0",
-          )}
-        >
-          <span className="text-xl font-bold">EduCRM</span>
-          <span className="text-sm text-primary-foreground">
-            Private School
-          </span>
-        </p>
+    <div className="flex flex-col h-full px-2 pt-4">
+      {/* Logo */}
+      <div className="mb-5 flex gap-2 items-center text-white pl-3">
+        <GiBookmarklet size={32} />
+        {sidebarCollapsed && (
+          <div>
+            <p className="text-xl font-bold">EduCRM</p>
+            <p className="text-sm">Private School</p>
+          </div>
+        )}
       </div>
-      <div className="border-[0.2px] border-border w-full mb-4"></div>
-      <nav className="p-1 space-y-2 w-full">
+
+      <nav className="space-y-2">
         {menu.map((item) => {
-          const isActive = item.href === pathname;
+          const isActive = pathname.startsWith(item.href);
           return (
             <Link
               key={item.name}
               href={item.href}
-              aria-current="page"
               className={cn(
                 "menu-item",
-                isActive && "text-secondary bg-border",
-                !sidebarCollapsed && "justify-center",
+                isActive && "bg-border text-secondary",
+                !sidebarCollapsed && "justify-center"
               )}
             >
-              <item.icon
-                size={20}
-                className={`text-primary-foreground ${isActive ? "text-secondary" : ""}`}
-              />
-              <span
-                className={cn(
-                  "transition-all duration-200 whitespace-nowrap overflow-hidden",
-                  sidebarCollapsed ? "opacity-100 w-auto" : "opacity-0 w-0",
-                )}
-              >
-                {item.name}
-              </span>
+              <item.icon size={20} />
+              {sidebarCollapsed && <span>{item.name}</span>}
             </Link>
           );
         })}
       </nav>
+
+      {/* Collapse */}
       <button
         onClick={toggleSidebar}
-        className={cn(
-          "flex items-center justify-center mt-32 gap-1 p-2 bg-gray-800 rounded-xl text-primary-foreground cursor-pointer transition-all duration-200 ease-in-out",
-          sidebarCollapsed ? "w-52" : "w-15",
-        )}
+        className="mt-auto mb-4 mx-auto bg-gray-800 p-2 rounded-xl"
       >
-        {sidebarCollapsed ? (
-          <>
-            <FaAngleLeft size={20} /> <span>Collapse</span>
-          </>
-        ) : (
-          <MdKeyboardDoubleArrowRight size={21} />
-        )}
+        {sidebarCollapsed ? <FaAngleLeft /> : <MdKeyboardDoubleArrowRight />}
       </button>
     </div>
   );
 }
+

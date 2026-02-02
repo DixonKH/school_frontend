@@ -8,10 +8,12 @@ export default function DashboardLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const { sidebarCollapsed, toggleSidebar } = useUIStore();
+
+  const role: "ADMIN" | "TEACHER" | "STUDENT" = "ADMIN";
   return (
     <div className="w-full flex h-screen overflow-hidden">
       <div className={cn("bg-primary transition-all duration-300 ease-in-out", sidebarCollapsed ? "w-64" : "w-19")}>
-        <SideBar toggleSidebar={toggleSidebar} sidebarCollapsed={sidebarCollapsed} />
+        <SideBar role={role} toggleSidebar={toggleSidebar} sidebarCollapsed={sidebarCollapsed} />
       </div>
 
       <div className="w-full flex flex-col flex-1">
