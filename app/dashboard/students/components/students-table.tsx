@@ -10,7 +10,7 @@ export function StudentsTable({ students }: Props) {
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
       <table className="w-full text-sm">
-        <thead className="bg-gray-50 text-gray-600">
+        <thead className="bg-gray-100 text-gray-600">
           <tr>
             <th className="px-4 py-3 text-left">Student</th>
             <th className="px-4 py-3">Class</th>

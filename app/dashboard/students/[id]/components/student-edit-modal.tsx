@@ -57,11 +57,11 @@ export default function StudentEditModal({ open, onClose, student }: Props) {
         <div className="mt-6 flex justify-end gap-3">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-lg bg-destructive text-white hover:bg-gray-50"
+            className="px-4 py-2 rounded-lg bg-destructive text-white hover:bg-red-500/90"
           >
             Cancel
           </button>
-          <button className="px-4 py-2 rounded-lg bg-ring text-white hover:bg-primary/90">
+          <button className="px-4 py-2 rounded-lg bg-ring text-white hover:bg-ring/90">
             Save changes
           </button>
         </div>

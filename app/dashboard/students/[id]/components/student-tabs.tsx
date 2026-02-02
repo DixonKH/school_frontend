@@ -11,7 +11,7 @@ export default function StudentTabs() {
 
   return (
     <div className="bg-white rounded-xl shadow-sm p-6">
-      <div className="flex gap-6 border-b mb-4">
+      <div className="flex gap-6 border-b border-gray-300 mb-4">
         {tabs.map((tab) => (
           <button
             key={tab}
