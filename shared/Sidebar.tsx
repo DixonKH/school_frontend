@@ -63,7 +63,7 @@ export default function SideBar({
 
       <nav className="space-y-2">
         {menu.map((item) => {
-          const isActive = pathname.startsWith(item.href);
+          const isActive = item.href === "/admin" ? pathname === "/admin" :  pathname.startsWith(item.href);
           return (
             <Link
               key={item.name}

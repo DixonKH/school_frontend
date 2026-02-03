@@ -3,8 +3,6 @@ import {
   Avatar,
   AvatarBadge,
   AvatarFallback,
-  AvatarGroup,
-  AvatarGroupCount,
   AvatarImage,
 } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";

@@ -71,7 +71,7 @@ export default function TeachersPage() {
             {teachers.map((teacher) => (
               <tr className="hover:bg-gray-100">
                 <td className="px-4 py-3 font-medium cursor-pointer">
-                  <Link href={`/dashboard/teachers/${teacher.id}`}>
+                  <Link href={`/admin/teachers/${teacher.id}`}>
                     {teacher.name}
                   </Link>
                 </td>

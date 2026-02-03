@@ -5,7 +5,7 @@ export function StudentRowActions({ id }: { id: string }) {
   return (
     <div className="flex items-center justify-end gap-3">
       <Link
-        href={`/dashboard/students/${id}`}
+        href={`/admin/students/${id}`}
         className="text-gray-500 hover:text-primary"
       >
         <FiEye />

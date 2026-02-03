@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export function ClassCard() {
   return (
-    <Link href="/dashboard/classes/1" className="group">
+    <Link href="/admin/classes/1" className="group">
       <div
         className="
           p-5 h-full border border-gray-300 rounded-xl cursor-pointer
