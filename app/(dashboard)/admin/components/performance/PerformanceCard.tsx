@@ -13,7 +13,7 @@ type Props = {
 export default function ClassPerformanceCard({ data }: Props) {
   return (
     <Link
-      href={`/dashboard/classes/${data.id}`}
+      href={`/admin/classes/${data.id}`}
       className="block"
     >
       <div className="bg-white rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all p-5 space-y-4 cursor-pointer">

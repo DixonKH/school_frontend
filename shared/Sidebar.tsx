@@ -31,7 +31,7 @@ const menuByRole = {
 
   STUDENT: [
     { name: "Dashboard", icon: MdSpaceDashboard, href: "/student" },
-    { name: "My Grades", icon: FaUserGraduate, href: "/student/grades" },
+    { name: "My Class", icon: FaUserGraduate, href: "/student/class" },
     { name: "Attendance", icon: IoNotifications, href: "/student/attendance" },
   ],
 };
@@ -54,16 +54,19 @@ export default function SideBar({
       <div className="mb-5 flex gap-2 items-center text-white pl-3">
         <GiBookmarklet size={32} />
         {sidebarCollapsed && (
-          <div>
+          <Link href="/">
             <p className="text-xl font-bold">EduCRM</p>
             <p className="text-sm">Private School</p>
-          </div>
+          </Link>
         )}
       </div>
 
       <nav className="space-y-2">
         {menu.map((item) => {
-          const isActive = item.href === "/admin" ? pathname === "/admin" :  pathname.startsWith(item.href);
+          const isActive =
+            item.href === "/admin"
+              ? pathname === "/admin"
+              : pathname.startsWith(item.href);
           return (
             <Link
               key={item.name}
@@ -71,7 +74,7 @@ export default function SideBar({
               className={cn(
                 "menu-item",
                 isActive && "bg-border text-secondary",
-                !sidebarCollapsed && "justify-center"
+                !sidebarCollapsed && "justify-center",
               )}
             >
               <item.icon size={20} />
@@ -84,11 +87,11 @@ export default function SideBar({
       {/* Collapse */}
       <button
         onClick={toggleSidebar}
-        className="mt-auto mb-4 mx-auto bg-gray-800 p-2 rounded-xl"
+        className="m-auto flex justify-center items-center mb-4 mx-auto bg-border text-gray-300 p-2 w-3/4 rounded-xl"
       >
-        {sidebarCollapsed ? <FaAngleLeft /> : <MdKeyboardDoubleArrowRight />}
+        {sidebarCollapsed ? <span className="flex items-center gap-1"><FaAngleLeft />Collapse</span> : <MdKeyboardDoubleArrowRight />}
+       
       </button>
     </div>
   );
 }
-

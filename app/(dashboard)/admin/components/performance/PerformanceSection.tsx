@@ -32,6 +32,7 @@
 // }
 
 // components/dashboard/performance/PerformanceSection.tsx
+import Link from "next/link";
 import ClassPerformanceCard from "./PerformanceCard";
 
 const mockData = [
@@ -79,9 +80,9 @@ export default function PerformanceSection() {
           </p>
         </div>
 
-        <button className="text-sm px-3 py-1 rounded-lg bg-gray-100">
+        <Link href="/admin/classes" className="text-sm px-3 py-1 rounded-lg bg-gray-100">
           View all
-        </button>
+        </Link>
       </div>
 
       {/* cards */}

@@ -1,6 +1,5 @@
 import { FiUsers } from "react-icons/fi";
 import { LuGraduationCap, LuCalendarCheck } from "react-icons/lu";
-import { Users, GraduationCap, BookOpen, CreditCard } from "lucide-react";
 import KpiCard from "./KpiCard";
 
 const kpis = [

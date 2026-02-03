@@ -41,11 +41,16 @@ const students = [
 export default function StudentsPage() {
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-1">
-        <h1 className="text-2xl font-semibold">Students</h1>
-        <p className="text-gray-500">
-          Manage and monitor all students in your school
-        </p>
+      <div className="flex items-center justify-between">
+        <div className="flex flex-col">
+          <h1 className="text-2xl font-semibold">Students</h1>
+          <p className="text-gray-500">
+            Manage and monitor all students in your school
+          </p>
+        </div>
+        <button className="bg-ring cursor-pointer text-white px-4 py-2 rounded-md">
+          Add student
+        </button>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

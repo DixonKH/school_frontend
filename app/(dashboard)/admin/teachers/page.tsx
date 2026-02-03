@@ -44,12 +44,12 @@ export default function TeachersPage() {
             Manage teachers and assignments
           </p>
         </div>
-        <button className="bg-ring text-white px-4 py-2 rounded-xl">
+        <button className="bg-ring cursor-pointer text-white px-4 py-2 rounded-md">
           Add teacher
         </button>
       </div>
 
-      {/* Search */}
+      {/* Search */} 
       <input
         placeholder="Search teacher..."
         className=" border border-gray-400 focus:ring-1 focus:ring-secondary rounded-lg px-4 py-2 w-72"
