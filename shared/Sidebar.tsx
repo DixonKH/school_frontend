@@ -26,11 +26,12 @@ const menuByRole = {
   TEACHER: [
     { name: "Dashboard", icon: MdSpaceDashboard, href: "/teacher" },
     { name: "My Classes", icon: FaChalkboardTeacher, href: "/teacher/classes" },
+    { name: "My Journal", icon: FaChalkboardTeacher, href: "/teacher/journal" },
     { name: "Schedule", icon: IoNotifications, href: "/teacher/schedule" },
   ],
 
   STUDENT: [
-    { name: "Dashboard", icon: MdSpaceDashboard, href: "/student" },
+    { name: "My Profile", icon: MdSpaceDashboard, href: "/student" },
     { name: "My Class", icon: FaUserGraduate, href: "/student/class" },
     { name: "Attendance", icon: IoNotifications, href: "/student/attendance" },
   ],

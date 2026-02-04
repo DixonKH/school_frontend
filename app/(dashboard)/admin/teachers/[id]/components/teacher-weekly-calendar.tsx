@@ -21,7 +21,7 @@ export default function TeacherWeeklyCalendar() {
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold">Weekly Schedule</h3>
         <div className="text-sm text-muted-foreground">
-          20 Jan – 26 Jan
+          2026 – 2027 Akademic year
         </div>
       </div>
 
@@ -34,11 +34,11 @@ export default function TeacherWeeklyCalendar() {
         {days.map((day) => (
           <div
             key={day}
-            className="text-center text-sm font-medium py-2 bg-secondary/90 text-white border-l"
+            className="text-center text-sm font-medium py-4 px-1 bg-gray-200/60 text-gray-700 border-l border-white"
           >
             {day}
           </div>
-        ))}
+        ))} 
 
         {/* Time rows */}
         {times.map((time) => (
@@ -46,7 +46,7 @@ export default function TeacherWeeklyCalendar() {
             {/* Time label */}
             <div
               key={time}
-              className="text-xs text-muted-foreground bg-white px-2 py-3 border-t"
+              className="text-xs text-center bg-gray-200/60 text-gray-700 font-semibold px-2 py-3 border-t border-white"
             >
               {time}
             </div>
@@ -55,7 +55,7 @@ export default function TeacherWeeklyCalendar() {
             {days.map((day) => (
               <div
                 key={day + time}
-                className="relative border-l border-t h-14 hover:bg-blue-300 transition"
+                className="relative border-dashed border-r border-b h-14 hover:bg-teal-300/60 transition-all duration-300"
               >
                 {/* Example lesson block */}
                 {day === "Mon" && time === "10:30" && (
@@ -66,7 +66,7 @@ export default function TeacherWeeklyCalendar() {
                 )}
                 {day === "Tue" && time === "08:50" && (
                   <LessonBlock
-                    subject="Math"
+                    subject="Math, Physics"
                     className="10-A"
                   />
                 )}
