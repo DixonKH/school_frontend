@@ -27,7 +27,7 @@ export default function StudentEditModal({ open, onClose, student }: Props) {
             className="text-gray-400 hover:text-gray-600"
           >
             ✕
-          </button>
+          </button> 
         </div>
 
         {/* Form */}

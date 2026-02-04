@@ -16,11 +16,11 @@ const times = [
 
 export default function TeacherWeeklyCalendar() {
   return (
-    <div className="border border-gray-300 p-4 rounded-xl">
+    <div className="border border-gray-200 bg-white p-4 rounded-xl">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold">Weekly Schedule</h3>
-        <div className="text-sm text-muted-foreground">
+        <h3 className="text-lg font-semibold text-gray-700">Weekly Schedule</h3>
+        <div className="text-sm text-gray-700 font-semibold">
           2026 – 2027 Akademic year
         </div>
       </div>
@@ -46,7 +46,7 @@ export default function TeacherWeeklyCalendar() {
             {/* Time label */}
             <div
               key={time}
-              className="text-xs text-center bg-gray-200/60 text-gray-700 font-semibold px-2 py-3 border-t border-white"
+              className="h-auto text-xs text-center bg-gray-200/60 text-gray-700 font-semibold px-2 py-3 border-t border-white"
             >
               {time}
             </div>
@@ -55,7 +55,7 @@ export default function TeacherWeeklyCalendar() {
             {days.map((day) => (
               <div
                 key={day + time}
-                className="relative border-dashed border-r border-b h-14 hover:bg-teal-300/60 transition-all duration-300"
+                className="border-dashed border-r border-b min-h-14 hover:bg-teal-300/60 transition-all duration-300"
               >
                 {/* Example lesson block */}
                 {day === "Mon" && time === "10:30" && (
@@ -66,7 +66,7 @@ export default function TeacherWeeklyCalendar() {
                 )}
                 {day === "Tue" && time === "08:50" && (
                   <LessonBlock
-                    subject="Math, Physics"
+                    subject="Math, Physics, Chemistry"
                     className="10-A"
                   />
                 )}
