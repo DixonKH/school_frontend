@@ -16,7 +16,7 @@ export default function TopBar() {
       <div className="flex justify-center items-center gap-6">
         <div className="relative">
           <IoIosNotificationsOutline size={22} className="w-6 h-6" />
-          <span className="badge">3</span>
+          <span className="badge text-gray-600">3</span>
         </div>
         <div className="flex items-center gap-2">
           <Image src="/avatar.jpg" width={40} height={40} alt="avatar" />

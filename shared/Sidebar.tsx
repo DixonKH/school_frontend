@@ -13,41 +13,24 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-const menuByRole = {
-  ADMIN: [
-    { name: "Dashboard", icon: MdSpaceDashboard, href: "/admin" },
-    { name: "Students", icon: FaUser, href: "/admin/students" },
-    { name: "Teachers", icon: FaUserGraduate, href: "/admin/teachers" },
-    { name: "Classes", icon: FaChalkboardTeacher, href: "/admin/classes" },
-    { name: "Payments", icon: IoWallet, href: "/admin/payments" },
-    { name: "Settings", icon: IoIosSettings, href: "/admin/settings" },
-  ],
-
-  TEACHER: [
-    { name: "Dashboard", icon: MdSpaceDashboard, href: "/teacher" },
-    { name: "My Classes", icon: FaChalkboardTeacher, href: "/teacher/classes" },
-    { name: "My Journal", icon: FaChalkboardTeacher, href: "/teacher/journal" },
-    { name: "Schedule", icon: IoNotifications, href: "/teacher/schedule" },
-  ],
-
-  STUDENT: [
-    { name: "My Profile", icon: MdSpaceDashboard, href: "/student" },
-    { name: "My Class", icon: FaUserGraduate, href: "/student/class" },
-    { name: "Attendance", icon: IoNotifications, href: "/student/attendance" },
-  ],
-};
+const menu = [
+  { name: "Dashboard", icon: MdSpaceDashboard, href: "/admin" },
+  { name: "Students", icon: FaUser, href: "/admin/students" },
+  { name: "Teachers", icon: FaUserGraduate, href: "/admin/teachers" },
+  { name: "Classes", icon: FaChalkboardTeacher, href: "/admin/classes" },
+  { name: "Payments", icon: IoWallet, href: "/admin/payments" },
+  { name: "Settings", icon: IoIosSettings, href: "/admin/settings" },
+];
 
 export default function SideBar({
-  role,
   toggleSidebar,
   sidebarCollapsed,
 }: {
-  role: "ADMIN" | "TEACHER" | "STUDENT";
   toggleSidebar: () => void;
   sidebarCollapsed: boolean;
 }) {
   const pathname = usePathname();
-  const menu = menuByRole[role];
+  const ROOT_ROUTES = ["/admin", "/teacher", "/student"];
 
   return (
     <div className="flex flex-col h-full px-2 pt-4">
@@ -55,19 +38,18 @@ export default function SideBar({
       <div className="mb-5 flex gap-2 items-center text-white pl-3">
         <GiBookmarklet size={32} />
         {sidebarCollapsed && (
-          <Link href="/">
+          <div>
             <p className="text-xl font-bold">EduCRM</p>
             <p className="text-sm">Private School</p>
-          </Link>
+          </div>
         )}
       </div>
 
       <nav className="space-y-2">
         {menu.map((item) => {
-          const isActive =
-            item.href === "/admin"
-              ? pathname === "/admin"
-              : pathname.startsWith(item.href);
+          const isActive = ROOT_ROUTES.includes(item.href)
+            ? pathname === item.href
+            : pathname.startsWith(item.href);
           return (
             <Link
               key={item.name}
@@ -90,8 +72,14 @@ export default function SideBar({
         onClick={toggleSidebar}
         className="m-auto flex justify-center items-center mb-4 mx-auto bg-border text-gray-300 p-2 w-3/4 rounded-xl"
       >
-        {sidebarCollapsed ? <span className="flex items-center gap-1"><FaAngleLeft />Collapse</span> : <MdKeyboardDoubleArrowRight />}
-       
+        {sidebarCollapsed ? (
+          <span className="flex items-center gap-1">
+            <FaAngleLeft />
+            Collapse
+          </span>
+        ) : (
+          <MdKeyboardDoubleArrowRight />
+        )}
       </button>
     </div>
   );

@@ -35,27 +35,27 @@ export default function TeacherEditModal({ open, teacher, onClose }: Props) {
         <form className="space-y-2 max-h-[70vh] overflow-y-auto p-2 flex justify-center flex-col">
           <div className="flex flex-col">
             <label className="text-sm font-semibold" aria-label="name">Name: </label>
-            <input className="p-2 w-full focus:outline-none border border-gray-200 text-gray-600 rounded-xl" placeholder="Name..." defaultValue={teacher.fullName} />
+            <input className="input" placeholder="Name..." defaultValue={teacher.fullName} />
           </div>
 
           <div>
             <label className="text-sm font-semibold" aria-label="phone">Phone:</label>
-            <input className="p-2 w-full focus:outline-none border border-gray-200 text-gray-600 rounded-xl" placeholder="Phone..." defaultValue={teacher.phone} />
+            <input className="input" placeholder="Phone..." defaultValue={teacher.phone} />
           </div>
 
           <div>
             <label className="text-sm font-semibold" aria-label="email">Email:</label>
-            <input className="p-2 w-full focus:outline-none border border-gray-200 text-gray-600 rounded-xl" placeholder="Email..." defaultValue={teacher.email} />
+            <input className="input" placeholder="Email..." defaultValue={teacher.email} />
           </div>
 
           <div>
             <label className="text-sm font-semibold" aria-label="Classes">Classes:</label>
-            <input className="p-2 w-full focus:outline-none border border-gray-200 text-gray-600 rounded-xl" placeholder="Classes..." defaultValue={teacher.classes} />
+            <input className="input" placeholder="Classes..." defaultValue={teacher.classes} />
           </div>
 
           <div>
             <label className="text-sm font-semibold" aria-label="Address">Address:</label>
-            <input className="p-2 w-full focus:outline-none border border-gray-200 text-gray-600 rounded-xl" placeholder="Address..." defaultValue={teacher.address} />
+            <input className="input" placeholder="Address..." defaultValue={teacher.address} />
           </div>
         </form>
 
@@ -63,7 +63,7 @@ export default function TeacherEditModal({ open, teacher, onClose }: Props) {
         <div className="mt-6 flex justify-end gap-3">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-lg bg-ring text-white hover:bg-ring/90"
+            className="px-4 py-2 cursor-pointer rounded-lg bg-ring text-white hover:bg-ring/90"
           >
             Save changes
           </button>

@@ -31,27 +31,27 @@ export default function StudentEditModal({ open, onClose, student }: Props) {
         </div>
 
         {/* Form */}
-        <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-1">
-          <Field label="Full name">
-            <input defaultValue={student.fullName} />
-          </Field>
+        <form className="space-y-2 max-h-[70vh] overflow-y-auto p-2 flex justify-center flex-col">
+          <div className="flex flex-col">
+            <label className="text-sm font-semibold" aria-label="name">Name: </label>
+            <input className="input" placeholder="Name..." defaultValue={student.fullName} />
+          </div>
 
-          <Field label="Parent name">
-            <input defaultValue={student.parentName} />
-          </Field>
+          <div>
+            <label className="text-sm font-semibold" aria-label="phone">Phone:</label>
+            <input className="input" placeholder="Phone..." defaultValue={student.phone} />
+          </div>
 
-          <Field label="Phone">
-            <input defaultValue={student.phone} />
-          </Field>
+          <div>
+            <label className="text-sm font-semibold" aria-label="Parent Name">Parent Name:</label>
+            <input className="input" placeholder="Classes..." defaultValue={student.parentPhone} />
+          </div>
 
-          <Field label="Parent phone">
-            <input defaultValue={student.parentPhone} />
-          </Field>
-
-          <Field label="Address">
-            <textarea rows={3} defaultValue={student.address} />
-          </Field>
-        </div>
+          <div>
+            <label className="text-sm font-semibold" aria-label="Address">Address:</label>
+            <input className="input" placeholder="Address..." defaultValue={student.address} />
+          </div>
+        </form>
 
         {/* Actions */}
         <div className="mt-6 flex justify-end gap-3">
