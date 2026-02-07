@@ -37,7 +37,7 @@ export default function JournalTable() {
         {/* HEADER */}
         <thead className="sticky top-0 z-20 bg-accent text-gray-600">
           <tr>
-            <th className="sticky left-0 z-30 bg-accent border px-4 py-2 w-64 text-left">
+            <th className="sticky left-0 z-30 bg-accent border px-4 py-2 w-56 text-left">
               Talaba
             </th>
 

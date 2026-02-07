@@ -1,19 +1,4 @@
-"use client";
-
-type Props = {
-  open: boolean;
-  onClose: () => void;
-  teacher: {
-    fullName?: string;
-    classes?: string;
-    phone?: string;
-    email?: string;
-    address?: string;
-    subject?: string;
-  };
-};
-
-export default function TeacherEditModal({ open, teacher, onClose }: Props) {
+export default function StudentEditModal({ open, student, onClose }: any) {
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center">
@@ -33,27 +18,27 @@ export default function TeacherEditModal({ open, teacher, onClose }: Props) {
         <form className="space-y-2 max-h-[70vh] overflow-y-auto p-2 flex justify-center flex-col">
           <div className="flex flex-col">
             <label className="text-sm font-semibold" aria-label="name">Name: </label>
-            <input className="input" placeholder="Name..." defaultValue={teacher.fullName} />
+            <input className="input" placeholder="Name..." defaultValue={student.fullName} />
           </div>
 
           <div>
             <label className="text-sm font-semibold" aria-label="phone">Phone:</label>
-            <input className="input" placeholder="Phone..." defaultValue={teacher.phone} />
+            <input className="input" placeholder="Phone..." defaultValue={student.phone} />
           </div>
 
           <div>
             <label className="text-sm font-semibold" aria-label="email">Email:</label>
-            <input className="input" placeholder="Email..." defaultValue={teacher.email} />
+            <input className="input" placeholder="Email..." defaultValue={student.email} />
           </div>
 
           <div>
-            <label className="text-sm font-semibold" aria-label="Classes">Classes:</label>
-            <input className="input" placeholder="Classes..." defaultValue={teacher.classes} />
+            <label className="text-sm font-semibold" aria-label="Classes">Birth Date</label>
+            <input className="input" placeholder="Classes..." defaultValue={student.birthDate} />
           </div>
 
           <div>
             <label className="text-sm font-semibold" aria-label="Address">Address:</label>
-            <input className="input" placeholder="Address..." defaultValue={teacher.address} />
+            <input className="input" placeholder="Address..." defaultValue={student.address} />
           </div>
         </form>
 
