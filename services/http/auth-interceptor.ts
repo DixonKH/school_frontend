@@ -1,3 +1,4 @@
+'use client';
 import { http } from "./client";
 
 http.interceptors.request.use((config) => {
