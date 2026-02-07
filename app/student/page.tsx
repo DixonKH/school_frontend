@@ -6,7 +6,6 @@ import StudentHeader from "./components/StudentHeader";
 import StudentStats from "./components/StudentStats";
 import TodaySchedule from "./components/TudaySchedule";
 import StudentEditModal from "./components/student-edit-modal";
-import { add } from "date-fns";
 
 const student = {
     fullName: "Dilshod",

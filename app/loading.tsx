@@ -6,7 +6,7 @@ export default function Loading() {
       
       {/* Page title */}
       <Skeleton className="h-8 w-1/3" />
-
+ 
       {/* KPI cards */}
       <div className="grid grid-cols-3 gap-4">
         <Skeleton className="h-24 rounded-xl" />
