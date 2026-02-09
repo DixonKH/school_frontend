@@ -11,7 +11,7 @@ export default function DashboardLayout({
 
   return (
     <div className="w-full flex h-screen overflow-hidden">
-      <div className={cn("bg-primary transition-all duration-300 ease-in-out", sidebarCollapsed ? "w-64" : "w-19")}>
+      <div className={cn("bg-linear-to-br bg-primary transition-all duration-300 ease-in-out", sidebarCollapsed ? "w-64" : "w-19")}>
         <SideBar toggleSidebar={toggleSidebar} sidebarCollapsed={sidebarCollapsed} />
       </div>
 

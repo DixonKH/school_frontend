@@ -1,32 +1,40 @@
+import { authRole } from "@/shared/types/enum";
 import { create } from "zustand";
 
 type AuthUser = {
-    username: string;
-    email: string;
-    password: string;
-    role: string;
-}
+  id: string;
+  username: string;
+  email: string;
+  role: authRole;
+};
 
-export const useAuthStore = create((set) => ({
-    user: null,
-    role: null,
-    isAuthenticated: false,
-    
-    setUser: (user: AuthUser) => {
-        set({
-            user,
-            role: user.role,
-            isAuthenticated: true
-        })
-    },
+type AuthState = {
+  user: AuthUser | null;
+  role: authRole | null;
+  isAuthenticated: boolean;
 
-    logout: () => {
-        localStorage.removeItem('accessToken');
-        set({
-            user: null,
-            role: null,
-            isAuthenticated: false
-        })
-    }
-    
+  setUser: (user: AuthUser) => void;
+  logout: () => void;
+};
+
+export const useAuthStore = create<AuthState>((set) => ({
+  user: null,
+  role: null,
+  isAuthenticated: false,
+
+  setUser: (user) =>
+    set({
+      user,
+      role: user.role,
+      isAuthenticated: true
+    }),
+
+  logout: () => {
+    localStorage.removeItem("accessToken");
+    set({
+      user: null,
+      role: null,
+      isAuthenticated: false
+    });
+  }
 }));

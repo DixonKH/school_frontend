@@ -4,6 +4,8 @@ import TeacherWeeklyCalendar from "../(dashboard)/admin/teachers/[id]/components
 import TeacherModal from "./components/teacher-modal";
 import TeacherEditModal from "./components/teacher-edit-modal";
 import ClassCard from "./classes/components/class-card";
+import { useRoleGuard } from "@/features/auth/hooks/useRoleGuard";
+import { authRole } from "@/shared/types/enum";
 
 const teacher = {
   fullName: "Max Leiter",
@@ -15,6 +17,7 @@ const teacher = {
 };
 
 export default function TeacherDashboard() {
+  useRoleGuard([authRole.TEACHER])
   const [open, setOpen] = useState(false);
   return (
     <section className="flex flex-col gap-12">

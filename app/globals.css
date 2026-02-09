@@ -3,7 +3,7 @@
 
 @theme inline {
   /* Core colors */
-  --color-primary: #0f162e;    /*sidebar color*/
+  --color-primary: #132440;    /*sidebar color*/
   --color-primary-foreground: #adb2bb;   /*gray-600*/
 
   --color-secondary: #1a68ea;  /* dodgerBlue */
@@ -89,7 +89,7 @@
     @apply w-full flex flex-row gap-2 text-primary-foreground font-medium p-3 rounded-xl transition-colors duration-300;
   }
   .menu-item:hover {
-    @apply text-white bg-border;
+    @apply text-white bg-blue-700/60;
   }
   .badge {
     @apply absolute -top-2.5 -right-2 min-w-4.5 h-4.5 p-1 px-1.5 rounded-full bg-accent text-white text-[11px] font-medium flex items-center justify-center leading-none

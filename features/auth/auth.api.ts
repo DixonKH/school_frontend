@@ -8,6 +8,7 @@ export const registerApi = async (payload: RegisterDTO) => {
 
 export const loginApi = async (payload: LoginDTO) => {
     const {data} = await authService.login(payload);
+    console.log("login api data: ", data);
     return data;
 }
 

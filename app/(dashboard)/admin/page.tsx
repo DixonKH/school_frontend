@@ -1,8 +1,12 @@
+'use client';
+import { useRoleGuard } from "@/features/auth/hooks/useRoleGuard";
 import AttendanceSection from "./components/attendance/AttendanceSection";
 import KpiSection from "./components/kpi/KpiSection";
 import PerformanceSection from "./components/performance/PerformanceSection";
+import { authRole } from "@/shared/types/enum";
 
 export default function Dashboard() {
+  useRoleGuard([authRole.ADMIN])
   return (
     <div className="flex flex-col p-2">
       <div className="space-y-2 mb-4">

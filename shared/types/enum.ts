@@ -1,5 +1,5 @@
 export enum authRole {
-    ADMIN,
-    TEACHER,
-    STUDENT
+    ADMIN = "ADMIN",
+    TEACHER = "TEACHER",
+    STUDENT = "STUDENT"
 }

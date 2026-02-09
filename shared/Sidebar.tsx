@@ -56,7 +56,7 @@ export default function SideBar({
               href={item.href}
               className={cn(
                 "menu-item",
-                isActive && "bg-border text-secondary",
+                isActive && "bg-blue-800 text-teal-100",
                 !sidebarCollapsed && "justify-center",
               )}
             >
@@ -70,7 +70,7 @@ export default function SideBar({
       {/* Collapse */}
       <button
         onClick={toggleSidebar}
-        className="m-auto flex justify-center items-center mb-4 mx-auto bg-border text-gray-300 p-2 w-3/4 rounded-xl"
+        className="m-auto flex justify-center cursor-pointer items-center mb-4 mx-auto bg-blue-900 text-gray-300 p-2 w-3/4 rounded-xl"
       >
         {sidebarCollapsed ? (
           <span className="flex items-center gap-1">
