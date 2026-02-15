@@ -114,8 +114,6 @@ export default function SignupPage() {
                   Select role
                 </option>
                 <option value={authRole.ADMIN}>Admin</option>
-                <option value={authRole.TEACHER}>Teacher</option>
-                <option value={authRole.STUDENT}>Student</option>
               </select>
               {formState.errors.role && (
                 <p className="text-red-500 text-sm">

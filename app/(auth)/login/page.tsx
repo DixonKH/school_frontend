@@ -4,9 +4,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, LoginSchema } from "@/features/auth/schema/login.schema";
 import { IoIosSchool } from "react-icons/io";
 import { useLogin } from "@/features/auth/auth.queries";
+import Link from "next/link";
 
 export default function LoginPage() {
-
   const loginMutation = useLogin();
 
   const form = useForm<LoginSchema>({
@@ -104,6 +104,13 @@ export default function LoginPage() {
               {loginMutation.isPending ? "Signing in..." : "Sign In"}
             </button>
           </form>
+
+          <p className="text-center text-sm text-gray-500 mt-6">
+            Don&apos;t have an account?{" "}
+            <Link href="/register" className="text-blue-600 hover:underline">
+              Sign in
+            </Link>
+          </p>
 
           <p className="text-center text-sm text-gray-500 mt-6">
             © {new Date().getFullYear()} EduCRM. All rights reserved.
